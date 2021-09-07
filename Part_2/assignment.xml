@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+	<InstallationSetting>
+		<!--  Set CONTENT as "C:\installation" to InstallationPath element -->
+		<!-- EXAMPLE 
+		<InstallationPath>C:\installation</InstallationPath>
+		 END EXAMPLE
+		-->
+		<InstallationPath/>
+		<ApplicationFeatures>
+			<!--  Set value as 1 to add element where key="Application\Databaseconnector" -->
+			<!-- EXAMPLE 
+		<add key="Application\Databaseconnector" value="1"/>
+		 END EXAMPLE
+		-->
+			<add key="Application\Databaseconnector" value="0"/>
+		</ApplicationFeatures>
+	</InstallationSetting>
+	<GeneralSettings>
+		<!-- Set value as "testserver,8885\testdatabase" to add element where key="DBServer"-->
+		<!-- EXAMPLE 
+		<add key="DBServer" value="testserver,8885\testdatabase"/>
+		 END EXAMPLE
+		-->
+		<add key="DBServer" value="server"/>
+	</GeneralSettings>
+	<DatabaseSettings>
+		<DatabaseNames>
+			<!--  Set value as 1 to add element where key="DatabaseLog" -->
+			<!-- EXAMPLE
+		<add key="DatabaseLog" value="1"/>
+			 END EXAMPLE
+		-->
+			<add key="DatabaseLog" value="0"/>
+		</DatabaseNames>
+	</DatabaseSettings>
+	<ConfigurationScript>
+		<ConfigurationService>
+			<ReplaceVariable>
+				<!-- Set value as "testserver,8885\testdatabase" to add element where key="$$DBServer$$"-->
+				<!-- EXAMPLE 
+			<add key="$$DBServer$$" value="testserver,8885\testdatabase"/>
+				 END EXAMPLE
+			-->
+				<add key="$$DBServer$$" value="server"/>
+			</ReplaceVariable>
+		</ConfigurationService>
+	</ConfigurationScript>
+	<HostServerConfig>
+		<configuration>
+			<system.serviceModel>
+				<bindings>
+					<wsHttpBinding>
+						<binding closeTimeout="00:10:00" maxReceivedMessageSize="2147483647" name="wsHttps" openTimeout="00:10:00" receiveTimeout="00:10:00" sendTimeout="00:10:00" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing">
+							<readerQuotas maxArrayLength="2147483647" maxStringContentLength="2147483647"/>
+							<security mode="Transport">
+								<!--add attribute clientCredentialType="Windows" to transport element-->
+								<!-- EXAMPLE
+						<transport xdt:Transform="SetAttributes" clientCredentialType="Windows"/>
+							END EXAMPLE
+						-->
+								<transport xdt:Transform="SetAttributes"/>
+								<!-- Add new element as sub element to "security" element
+						 EXAMPLE
+						<binding name="customBinding"></binding>
+							 END EXAMPLE
+						-->
+							</security>
+						</binding>
+					</wsHttpBinding>
+				</bindings>
+			</system.serviceModel>
+		</configuration>
+	</HostServerConfig>
+</root>

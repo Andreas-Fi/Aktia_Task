@@ -3,12 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1622
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Task_Part_1", "Part_1\Test_Task\Test_Task\Test_Task_Part_1.csproj", "{FDEE5872-892D-40FF-83F0-1FBFC1A3A02D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7737D7EC-0729-4B4C-9335-57D01E8FBE9F}"
-	ProjectSection(SolutionItems) = preProject
-		Part_2\Test_Task_Part_2.ps1 = Part_2\Test_Task_Part_2.ps1
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Task", "Test_Task\Test_Task.csproj", "{FDEE5872-892D-40FF-83F0-1FBFC1A3A02D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
